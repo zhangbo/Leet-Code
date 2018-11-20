@@ -161,29 +161,6 @@ void printBoard(int board[][9])
     printf("└─────┴─────┴─────┘\n");
 }
 
-//LeetCode puzzle
-bool isValidSudoku(char** board, int boardRowSize, int boardColSize)
-{
-	for (int i = 0; i < boardRowSize; ++i)
-	{
-		for (int j = 0; j < boardColSize; ++j)
-		{
-			if (board[i][j] != '.')
-			{
-				int num = board[i][j];
-				for (int k = 0; k < boardRowSize; ++k)
-				{
-					if (board[i][k] == num || board[k][j] == num || board[(i / 3) * 3 + (k / 3)][(j / 3) * 3 + (k % 3)] == num)
-					{
-						return false;
-					}
-				}
-			}
-		}
-	}
-	return true;
-}
-
 
 
 
