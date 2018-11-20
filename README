@@ -8,4 +8,6 @@ twoSum.c
 subArrMaxSum.c
 5. https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/23/
 rotateArr.c
-
+6. https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/30/
+suduku_leetcode.c
+sudoku.c是进阶，由程序直接得出数独结果
