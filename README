@@ -15,3 +15,5 @@ sudoku.c是进阶，由程序直接得出数独结果
 removeDuplicates.c
 8. https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/strings/34/
 getFirstUniqCharacter.c
+9. https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/strings/40/
+string_prefix.c

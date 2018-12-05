@@ -33,14 +33,27 @@ long long fabonacci_dp2(int x);
 #define SIZE 45
 #endif
 
+//时间复杂度 O(n) 空间复杂度 O(1)
+long long fabonacci_dp2(int x)
+{
+	int dp1 = 0, dp2 = 1, tmp = 0;
+	for (int i = 2; i < x + 1; ++i)
+	{
+		tmp = dp2;
+		dp2 += dp1;
+		dp1 = tmp;
+	}
+	return dp2;
+}
+
 int main(int argc, char const *argv[])
 {
 	int arr[SIZE] = {0};
 	clock_t begin = clock();
-	printf("%lld\n", fabonacci(SIZE));
+	// printf("%lld\n", fabonacci(SIZE));
 	// printf("%lld\n", fabonacci_recursive((int*)arr, SIZE));
 	// printf("%lld\n", fabonacci_dp1((int*)arr, SIZE));
-	// printf("%lld\n", fabonacci_dp2(SIZE));
+	printf("%lld\n", fabonacci_dp2(SIZE));
 	clock_t end = clock();
 	double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
 	printf("%f\n", time_spent);
@@ -94,15 +107,3 @@ long long fabonacci_dp1(int* arr, int x)
 	return arr[x - 1];
 }
 
-//时间复杂度 O(n) 空间复杂度 O(1)
-long long fabonacci_dp2(int x)
-{
-	int dp1 = 0, dp2 = 1, tmp = 0;
-	for (int i = 2; i < x + 1; ++i)
-	{
-		tmp = dp2;
-		dp2 += dp1;
-		dp1 = tmp;
-	}
-	return dp2;
-}
