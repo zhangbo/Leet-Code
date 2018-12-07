@@ -17,3 +17,5 @@ removeDuplicates.c
 getFirstUniqCharacter.c
 9. https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/strings/40/
 string_prefix.c
+10. https://leetcode-cn.com/problems/valid-parentheses/
+validParentheses.c
