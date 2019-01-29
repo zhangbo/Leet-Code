@@ -7,6 +7,7 @@ typedef struct step {
 	struct step* next;
 } Step;
 
+void freeLink(Step* header);
 void popLastStep(Step* header);
 void swap(int* arr, int a, int b);
 bool isValid(int idx, size_t size);
@@ -28,6 +29,7 @@ int main(int argc, char const *argv[])
 	}
 	header->next = NULL;
 	bruteforce((int*)start, (int*)end, size, header);
+	freeLink(header);
 	return 0;
 }
 
@@ -64,6 +66,21 @@ void popLastStep(Step* header)
 		header = header->next;
 	}
 	tmpStep->next = NULL;
+	free(header);
+}
+
+void freeLink(Step* header)
+{
+	if (header == NULL)
+	{
+		return;
+	}
+	while (header->next != NULL)
+	{
+		Step* tmpStep = header;
+		header = header->next;
+		free(tmpStep);
+	}
 	free(header);
 }
 
