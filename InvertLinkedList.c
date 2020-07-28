@@ -58,6 +58,23 @@ struct Node* InvertLinkedList(struct Node* header)
 	}
 }
 
+struct Node* InvertLinkedList2(struct Node* header)
+{
+	if (header == NULL)
+	{
+		return header;
+	}
+	struct Node *n = header->next, *h = header, *temp = header;
+	while (n != NULL) {
+		struct Node *next = n;
+		n = next->next;
+		next->next = temp;
+		temp = next;
+	}
+	h->next = NULL;
+	return temp;
+}
+
 void reversePrintLinkedList(struct Node* header)
 {
 	if (header == NULL)
